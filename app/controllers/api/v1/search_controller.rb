@@ -3,7 +3,8 @@ module Api
         class SearchController < V1Controller
 
             def by_category
-                products = 
+                category_id = Category.get_category_id(params[:category]) 
+                products = Product.get_product_list(category_id)
                 render json: json_structure(products)
             end
 
