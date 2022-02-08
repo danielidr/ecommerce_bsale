@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :product_category, foreign_key: :category, class_name: 'Category' 
-  def self.get_product_list(category_id)
-    Product.where(category: category_id)
+  
+  def self.get_products_by_name(search)
+    Product.where('name LIKE ?', "%#{search}%")
   end
 end
