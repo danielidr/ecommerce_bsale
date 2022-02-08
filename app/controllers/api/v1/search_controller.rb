@@ -13,7 +13,12 @@ module Api
 
             def by_name
                 products = Product.get_products_by_name(params[:search])
-                render json: json_structure(products)
+                render json: products
+            end
+
+            def by_price
+                products = Product.get_products_by_price_range(params[:price1], params[:price2])
+                render json: products
             end
 
             private
