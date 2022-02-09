@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+  root to: 'home#index'
   namespace :api do
     namespace :v1 do
       get 'all_categories', to: 'search#all_categories'
