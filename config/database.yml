@@ -49,6 +49,6 @@ production:
 #
 production:
   <<: *default
-  database: desafio_bsale_production
-  username: desafio_bsale
+  database: bsale_test
+  username: bsale_test
   password: <%= ENV['DESAFIO_BSALE_DATABASE_PASSWORD'] %>
