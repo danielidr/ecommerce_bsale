@@ -12,7 +12,7 @@ module Api
             end
 
             def by_name
-                products = Product.get_products_by_name(params[:search])
+                products = Product.get_products_by_name(params[:name])
                 render json: products
             end
 
