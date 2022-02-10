@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let endpoint = window.location.origin+'/api/v1/all_categories';
+    let endpointAll = window.location.origin+'/api/v1/all_categories';
 
     fetchProducts();
 
     function fetchProducts() {
-        fetch (endpoint)
+        fetch (endpointAll)
             .then(function(response){
                 return response.json();
             })
@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function getData (){
     let name = document.getElementById("name").value;
-    let endpoint = window.location.origin+`/api/v1/by_name/${name}`;
+    let endpointSearch = window.location.origin+`/api/v1/by_name/${name}`;
     document.querySelector('.card-product').innerText = " ";
 
-    fetch (endpoint)
+    fetch (endpointSearch)
             .then(function(response){
                 return response.json();
             })
