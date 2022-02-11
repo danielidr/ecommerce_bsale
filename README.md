@@ -1,24 +1,41 @@
-# README
+## Desafio Bsale
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Landing page que muestra productos agrupados por la categoría a
+la que pertenecen.
 
-Things you may want to cover:
+Tiene un buscador donde se pueden encontrar los productos por su nombre mediante una API rest.
 
-* Ruby version
+Esta aplicación se conecta de forma remota a la base de datos.
 
-* System dependencies
+## Pre-requisitos
+Ruby `2.5.3`<br/>
+Rails `5.2.6`<br/>
+mysql2
 
-* Configuration
+## API rest
 
-* Database creation
+Endpoint para obtener productos ordenados por categoria:
+https://calm-hollows-79894.herokuapp.com/api/v1/all_categories
 
-* Database initialization
+Endpoint para buscar productos por nombre:
+https://calm-hollows-79894.herokuapp.com/api/v1/by_name/:nombre
 
-* How to run the test suite
+Endpoint para buscar productos por categoria:
+https://calm-hollows-79894.herokuapp.com/api/v1/by_category/:nombre_de_categoria
 
-* Services (job queues, cache servers, search engines, etc.)
+Endpoint para buscar productos por rango de precio:
+https://calm-hollows-79894.herokuapp.com/api/v1/by_category/:precio1/:precio2
 
-* Deployment instructions
+## Deployment:
 
-* ...
+### Clonar repositorio:
+```
+git clone https://github.com/danielidr/ecommerce_bsale
+```
+### Iniciar el servidor
+```
+rails s
+```
+
+### Heroku
+https://https://calm-hollows-79894.herokuapp.com/

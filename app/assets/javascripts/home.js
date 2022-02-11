@@ -1,28 +1,28 @@
+let endpointAll = window.location.origin+'/api/v1/all_categories';
 document.addEventListener('DOMContentLoaded', function() {
-    let endpointAll = window.location.origin+'/api/v1/all_categories';
+    fetchProducts();    
+})
 
-    fetchProducts();
+function fetchProducts() {
+    document.querySelector('.card-product').innerText = " ";
+    fetch (endpointAll)
+        .then(function(response){
+            return response.json();
+        })
 
-    function fetchProducts() {
-        fetch (endpointAll)
-            .then(function(response){
-                return response.json();
-            })
-
-            .then(function(response){
-                response.forEach(function (category) {
-                    let categoryTitle = `<div class='container my-4'>
-                    <h2>${category.name}</h2>
-                    </div>`
-                    document.querySelector(".card-product").insertAdjacentHTML('beforeend', categoryTitle);
-                    category.products.forEach(function (product) {
-                        let list = getProductCard(product);
-                        document.querySelector(".card-product").insertAdjacentHTML('beforeend', list);
-                    })
+        .then(function(response){
+            response.forEach(function (category) {
+                let categoryTitle = `<div class='container my-4'>
+                <h2>${category.name}</h2>
+                </div>`
+                document.querySelector(".card-product").insertAdjacentHTML('beforeend', categoryTitle);
+                category.products.forEach(function (product) {
+                    let list = getProductCard(product);
+                    document.querySelector(".card-product").insertAdjacentHTML('beforeend', list);
                 })
             })
-    }
-})
+        })
+}
 
 function getData (){
     let name = document.getElementById("name").value;
